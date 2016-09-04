@@ -1,7 +1,7 @@
 {
-  "name": "qr-order",
+  "name": "ET-info",
   "version": "0.0.1",
-  "description": "Mobile web UI based on Vue and Weui",
+  "description": "ET互联公司主页",
   "keywords": [
     "vux",
     "vue",
@@ -15,10 +15,10 @@
     "framework",
     "frontend"
   ],
-  "author": "airyland <airyland@qq.com>",
+  "author": "张岱岩 <642010820@qq.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/airyland/vux"
+    "url": "https://github.com/zzz945/ET-info.git"
   },
   "license": "MIT",
   "scripts": {

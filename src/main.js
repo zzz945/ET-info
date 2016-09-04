@@ -2,15 +2,7 @@ import Vue from 'vue'
 import VueRes from 'vue-resource'
 import Router from 'vue-router'
 import App from './App'
-
-import Wechat from './Wechat'
-import Yi from './yi'
-
-import Flexbox from './demos/Flexbox'
-import Cell from './demos/Cell'
-import Onepx from './demos/1px'
-import Demo from './demos/Demo'
-import Donate from './demos/Donate'
+import Index from './subpages/Index'
 
 // plugins
 import Device from './plugins/device'
@@ -79,31 +71,9 @@ router.map({
       require(['./Home'], resolve)
     }
   },
-  '/demo/wechat': {
-    component: Wechat
-  },
-  '/demo/yi': {
-    component: Yi
-  },
-  '/component/flexbox': {
-    component: Flexbox
-  },
-  '/component/cell': {
-    component: Cell
-  },
-  '/component/1px': {
-    component: Onepx
-  },
-  '/demo': {
-    component: Demo
-  },
-  '/project/donate': {
-    component: Donate
+  '/subpages/index': {
+    component: Index
   }
-})
-
-router.on('/component/center', {
-  component: require('./demos/Center')
 })
 
 // save position for demo page
