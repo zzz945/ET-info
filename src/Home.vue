@@ -5,11 +5,12 @@
   </div>
   <divider>第一关</divider>
   <box gap="10px 40px">
-    <div class="et-circle-page">
+    <div class="circle-page">
       <circle :percent="percent" :stroke-width="5" stroke-color="#04BE02">
-        <span>{{percent}}</span>
+        <span>{{percent}}%</span>
       </circle>
-      <range :value.sync="percent" :min="0" :max="100"></range>
+      <br>
+      <range :value.sync="percent" :min="0" :max="100" :range-bar-height="4"></range>
     </div>
   </box>
   <div>
@@ -58,32 +59,12 @@ export default {
 }
 </script>
 
+<style scoped>
+  .circle-page {
+    text-align: center;
+  }
+</style>
+
 <style>
-  .et-circle-page {
-    text-align: center;
-  }
-  
-  .bottom-pos {
-    width: 100%;
-    position: absolute;
-    bottom: 5px;
-  }
-  
-  .vux-title {
-    vertical-align: middle;
-    text-align: center;
-    color: #04BE02;
-    margin: 20px 10px 20px 10px;
-  }
-  
-  .vux-notice {
-    vertical-align: middle;
-    text-align: center;
-    color: #04BE02;
-  }
-  
-  body {
-    font-family: Helvetica, sans-serif;
-    background-color: #fbf9fe;
-  }
+  @import './index.less';
 </style>

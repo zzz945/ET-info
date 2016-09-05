@@ -6,7 +6,7 @@
   <divider>首页</divider>
   <br>
   <grids>
-    <grid v-for="item in list" :router-link="{path: '/' + item.url}" :image-url="item.image" :label="item.text"></grid>
+    <grid v-for="item in list" :router-link="{path: item.url}" :image-url="item.image" :label="item.text"></grid>
   </grids>
 </template>
 
@@ -47,7 +47,7 @@ export default {
       }, {
         text: '行业方案',
         url: '/subpages/hyfa',
-        image: 'http://tdkjgzh.applinzi.com/Public/et-info/img/hyfa.png'
+        image: 'http://tdkjgzh.applinzi.com/Public/et-info/img/hyfa2.png'
       }, {
         text: '商务合作',
         url: '/subpages/swhz',
@@ -79,5 +79,5 @@ export default {
 </script>
 
 <style>
-
+@import '../index.less';
 </style>
