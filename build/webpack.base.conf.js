@@ -62,6 +62,13 @@ module.exports = {
           limit: 10000,
           name: '[name].[ext]?[hash:7]'
         }
+      },
+      { 
+        test: /\.css$/,
+        loader: 'style!css'
+      },
+      { test: /\.less$/,
+        loader: 'style!css!autoprefixer!less' 
       }
     ]
   },

@@ -64,7 +64,3 @@ export default {
     text-align: center;
   }
 </style>
-
-<style>
-  @import './index.less';
-</style>

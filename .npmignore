@@ -1,5 +1,4 @@
 build/
-demo/
 node_modules/
 examples/
 test/
@@ -7,7 +6,7 @@ test/
 /src/*.js
 /src/*.html
 /src/assets/
-/src/demos/
+/src/subpages/
 favicon.ico
 logo.png
 CNAME

@@ -105,7 +105,3 @@ export default {
   margin-top: 5px;
 }
 </style>
-
-<style>
-@import '../index.less';
-</style>
