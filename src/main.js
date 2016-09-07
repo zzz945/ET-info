@@ -76,38 +76,49 @@ sync(store, router)
 
 router.map({
   '/': {
+    name: '关卡',
     component: function (resolve) {
       require(['./Home'], resolve)
     }
   },
   '/subpages/index': {
+    name: '公司首页',
     component: Index
   },
   '/subpages/gsdt': {
+    name: '公司动态',
     component: Gsdt
   },
   '/subpages/gsjj': {
+    name: '公司简介',
     component: Gsjj
   },
   '/subpages/hyfa': {
+    name: '行业方案',
     component: Hyfa
   },
   '/subpages/lxfs': {
+    name: '联系方式',
     component: Lxfs
   },
   '/subpages/lyb': {
+    name: '留言板',
     component: Lyb
   },
   '/subpages/qyln': {
+    name: '企业理念',
     component: Qyln
   },
   '/subpages/swhz': {
+    name: '商务合作',
     component: Swhz
   },
   '/subpages/zpxx': {
+    name: '招聘信息',
     component: Zpxx
   },
   '/subpages/zyyw': {
+    name: '主营业务',
     component: Zyyw
   }
 })

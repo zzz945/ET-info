@@ -1,30 +1,18 @@
 <template>
-  <div>
-    <h2 class="vux-title">ET互联</h2>
-    <p class="vux-title">青青子衿，悠悠我心，但为君故，沉吟至今</p>
+  <div class="font-color">
+    <grids class="grids_text">
+      <grid v-for="item in list" :router-link="{path: item.url}" :image-url="item.image" :label="item.text"></grid>
+    </grids>
   </div>
-  <divider>首页</divider>
-  <br>
-  <grids>
-    <grid v-for="item in list" :router-link="{path: item.url}" :image-url="item.image" :label="item.text"></grid>
-  </grids>
 </template>
 
 <script>
-import { Alert, Box, Divider, Circle, Range, Icon, Grids, Grid } from '../components'
-import vConsole from 'vconsole'
+import { Grids, Grid } from '../components'
 
 export default {
   components: {
-    Alert,
-    Box,
-    Divider,
-    Circle,
-    Range,
-    Icon,
     Grids,
-    Grid,
-    vConsole
+    Grid
   },
   data () {
     return {
@@ -77,3 +65,9 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+  @import '../styles/variable';
+  .grids_text {
+    color: @theme-color-text;
+  }
+</style>

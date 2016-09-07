@@ -2,7 +2,12 @@
 
 @color-wechat-green: #04BE02;
 
-@theme-color: #04BE02;
+@theme-color:#002269;
+//@theme-color-bg: #D7E9FF;
+@theme-color-bg: #265B73;
+@theme-color-fuzhu: #263038;
+@theme-color-dianjing: #4F0082;
+@theme-color-text: #fff;
 @opacity-disabled: 0.5;
 
 /**
@@ -19,8 +24,10 @@
 * Range
 */
 @range-opacity-disabled: @opacity-disabled;
-@range-color-bar-default: #a9acb1;
+@range-color-bar-default: @theme-color-text;
 @range-color-bar-active: @theme-color;
+@range-color-text: @theme-color-text;
+@range-color-handle: @theme-color-dianjing;
 
 /**
 * Tabbar
@@ -30,7 +37,7 @@
 /**
 * XHeader
 */
-@x-header-background-color: #35495e;
+@x-header-background-color: @theme-color-fuzhu;
 @x-header-title-color: #fff;
 @x-header-text-color: #ccc;
 @x-header-arrow-color: #ccc;

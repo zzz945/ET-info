@@ -1,11 +1,5 @@
 <template>
-  <div>
-    <h2 class="vux-title">ET互联</h2>
-    <p class="vux-title">青青子衿，悠悠我心，但为君故，沉吟至今</p>
-  </div>
-  <divider>公司简介</divider>
-  <br>
-  <div>
+  <div class="font-color">
     <p style='text-indent: 2em; margin: 20px; line-height: 1.5em;'>
       <span style='font-family: 楷体, 楷体_GB2312, SimKai; font-size: 16px;'>ET互联专注于为客户提供极致的移动互联网应用与服务。</span>
     </p>
@@ -30,3 +24,10 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scoped>
+  @import '../styles/variable';
+  .font-color {
+    color: @theme-color-text;
+  }
+</style>
