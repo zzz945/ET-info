@@ -14,7 +14,7 @@
               <span class="m-subtitle">青青子衿 悠悠我心 但为君故 沉吟至今</span>
             </div>
           </masker>
-        <router-view :transition="'vux-pop-' + (direction === 'forward' ? 'in' : 'out')"></router-view>
+        <router-view :transition="viewTransition"></router-view>
       </div>
       <div slot="bottom" class="footer_box vux-center">
         <p>地址：朝阳县创业孵化基地 邮编：122000</p>
@@ -27,6 +27,7 @@
 import store from './vuex/store'
 import { Loading, ViewBox, XHeader, Masker, Tabbar, TabbarItem } from './components'
 import wx from 'we-jssdk'
+import vConsole from 'vconsole'
 
 export default {
   components: {
@@ -35,7 +36,8 @@ export default {
     XHeader,
     Masker,
     Tabbar,
-    TabbarItem
+    TabbarItem,
+    vConsole
   },
   store: store,
   vuex: {
@@ -62,10 +64,10 @@ export default {
       }
     },
     headerTransition () {
-      return this.direction === 'forward' ? 'fadeLeft' : 'fadeRight'
+      return this.direction === 'forward' ? 'vux-header-fade-in-right' : 'vux-header-fade-in-left'
     },
     viewTransition () {
-      return this.direction === 'forward' ? 'slideLeft' : 'slideLeft'
+      return this.direction === 'forward' ? 'vux-pop-in' : 'vux-pop-out'
     },
     title () {
       return this.route.name
@@ -118,11 +120,13 @@ export default {
   }
 }
 </script>
-
+<style>
+  @import './styles/animate.min.css';
+</style>
 <style lang="less">
   @import 'styles/index.less';
   @import './styles/weui/base/reset';
-  @import "./styles/vue-animate/src/vue-animate.less";
+
   html,
   body {
     height: 100%;
@@ -173,50 +177,31 @@ export default {
   position: absolute;
   left: 0;
 }
-.vux-pop-out-enter {
-  animation-name: popInLeft;
+/*.vux-pop-out-enter {
+  animation-name: slideInLeft;
 }
 .vux-pop-out-leave {
-  animation-name: popOutRight;
+  animation-name: slideOutRight;
 }
 .vux-pop-in-enter {
   perspective: 1000;
-  animation-name: popInRight;
+  animation-name: slideInRight;
 }
 .vux-pop-in-leave {
-  animation-name: popOutLeft;
+  animation-name: slideOutLeft;
+}*/
+.vux-pop-out-enter {
+  animation-name: bounceInLeft;
 }
-@keyframes popInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
+.vux-pop-out-leave {
+  animation-name: bounceOutRight;
 }
-@keyframes popOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
+.vux-pop-in-enter {
+  perspective: 1000;
+  animation-name: bounceInRight;
 }
-@keyframes popInRight {
-  from {
-    transform: translate3d(100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes popOutRight {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(100%, 0, 0);
-  }
+.vux-pop-in-leave {
+  animation-name: bounceOutLeft;
 }
 </style>
 
