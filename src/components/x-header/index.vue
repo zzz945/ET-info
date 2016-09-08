@@ -127,18 +127,4 @@ export default {
   content: "\2022\0020\2022\0020\2022\0020";
   font-size: 16px;
 }
-.vux-header-fade-in-right-enter {
-  animation: fadeinR .5s;
-}
-.vux-header-fade-in-left-enter {
-  animation: fadeinL .5s;
-}
-@keyframes fadeinR{
-  0%{opacity:0;transform:translateX(80px);}
-  100%{opacity:1;transform:translateX(0);}
-}
-@keyframes fadeinL{
-  0%{opacity:0;transform:translateX(-80px);}
-  100%{opacity:1;transform:translateX(0);}
-}
 </style>

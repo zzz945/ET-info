@@ -27,7 +27,6 @@
 import store from './vuex/store'
 import { Loading, ViewBox, XHeader, Masker, Tabbar, TabbarItem } from './components'
 import wx from 'we-jssdk'
-import vConsole from 'vconsole'
 
 export default {
   components: {
@@ -36,8 +35,7 @@ export default {
     XHeader,
     Masker,
     Tabbar,
-    TabbarItem,
-    vConsole
+    TabbarItem
   },
   store: store,
   vuex: {
@@ -64,10 +62,10 @@ export default {
       }
     },
     headerTransition () {
-      return this.direction === 'forward' ? 'vux-header-fade-in-right' : 'vux-header-fade-in-left'
+      return this.direction === 'forward' ? 'vux-header-left' : 'vux-header-right'
     },
     viewTransition () {
-      return this.direction === 'forward' ? 'vux-pop-in' : 'vux-pop-out'
+      return this.direction === 'forward' ? 'vux-view-left' : 'vux-view-right'
     },
     title () {
       return this.route.name
@@ -90,7 +88,7 @@ export default {
 
       wx.ready(() => {
         console.log('wx.ready')
-        wx.onMenuShareTimeline({ title: 'ET互联 专注为传统行业提供互联网+解决方案', // 分享标题
+        wx.onMenuShareTimeline({ title: 'ET互联：专注移动互联网应用开发，为传统行业注入创新基因；ET移动互联，为您省心省钱；ET匠心出品，必然打造精品。', // 分享标题
                                  link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxebde861f373a287b&redirect_uri=http://tdkjgzh.applinzi.com/home/gsjj/index&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect', // 分享链接
                                  imgUrl: 'http://tdkjgzh.applinzi.com/Public/et-info/img/bg1.jpg', // 分享图标
                                  success: function () {
@@ -101,7 +99,7 @@ export default {
                                    // 用户取消分享后执行的回调函数
                                  }})
         wx.onMenuShareAppMessage({ title: 'ET互联', // 分享标题
-                                   desc: '专注为传统行业提供互联网+解决方案', // 分享描述
+                                   desc: '专注移动互联网应用开发，为传统行业注入创新基因；ET移动互联，为您省心省钱；ET匠心出品，必然打造精品。', // 分享描述
                                    link: 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxebde861f373a287b&redirect_uri=http://tdkjgzh.applinzi.com/home/gsjj/index&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect', // 分享链接
                                    imgUrl: 'http://tdkjgzh.applinzi.com/Public/et-info/img/bg1.jpg', // 分享图标
                                    type: '', // 分享类型,music、video或link，不填默认为link
@@ -161,17 +159,17 @@ export default {
   /**
 * vue-router transition
 */
-.vux-pop-out-transition,
-.vux-pop-in-transition {
+.vux-view-left-transition,
+.vux-view-right-transition {
   width: 100%;
   animation-duration: 0.5s;
   animation-fill-mode: both;
   backface-visibility: hidden;
 }
-.vux-pop-out-enter,
-.vux-pop-out-leave,
-.vux-pop-in-enter,
-.vux-pop-in-leave {
+.vux-view-left-enter,
+.vux-view-left-leave,
+.vux-view-right-enter,
+.vux-view-right-leave {
   will-change: transform;
   height: 100%;
   position: absolute;
@@ -190,18 +188,25 @@ export default {
 .vux-pop-in-leave {
   animation-name: slideOutLeft;
 }*/
-.vux-pop-out-enter {
+.vux-view-left-enter {
   animation-name: bounceInLeft;
 }
-.vux-pop-out-leave {
+.vux-view-left-leave {
   animation-name: bounceOutRight;
 }
-.vux-pop-in-enter {
+.vux-view-right-enter {
   perspective: 1000;
   animation-name: bounceInRight;
 }
-.vux-pop-in-leave {
+.vux-view-right-leave {
   animation-name: bounceOutLeft;
+}
+
+.vux-header-right-enter {
+  animation: bounceInRight .5s;
+}
+.vux-header-left-enter {
+  animation: bounceInLeft .5s;
 }
 </style>
 
