@@ -1,41 +1,35 @@
 <template>
-  <div style="height:100%;">
+  <div class="bd-box">
     <loading :show="isLoading" text="努力" position="absolute">加载中</loading>
-    <view-box v-ref:view-box>
-      <div class="vux-demo-header-box" slot="header">
-        <x-header :left-options="leftOptions" :transition="headerTransition" :title="title" @on-click-title="scrollTop"></x-header>
-      </div>
-      <div style="padding-top: 46px;">
-          <masker :opacity="0" class="header_box">
-            <div class="m-img" :style="{backgroundImage: 'url(' + bg_img + ')'}"></div>
-            <div slot="content" class="m-title">
-              ET互联
-              <br/>
-              <span class="m-subtitle">青青子衿 悠悠我心 但为君故 沉吟至今</span>
-            </div>
-          </masker>
-        <router-view :transition="viewTransition"></router-view>
-      </div>
-      <div slot="bottom" class="footer_box vux-center">
-        <p>地址：朝阳县创业孵化基地 邮编：122000</p>
-      </div>
-    </view-box>
+    <div class="header-box">
+      <x-header :left-options="leftOptions" :title="title" @on-click-title="scrollTop"></x-header>
+    </div>
+    <div class="title-box">
+      <div class="logo"></div>
+      <div class="title">互联</div>
+    </div>
+    <router-view class="view-box"></router-view>
+    <div class="footer_box">
+      <p class="address">地址：辽宁省朝阳市朝阳县柳城街道龙山街四号</p>
+      <p>统一社会信用代码91211321MAQFG6473</p>
+    </div>
   </div>
 </template>
 
 <script>
 import store from './vuex/store'
-import { Loading, ViewBox, XHeader, Masker, Tabbar, TabbarItem } from './components'
+import { Loading, XHeader, Masker, Tabbar, TabbarItem } from './components'
 import wx from 'we-jssdk'
+import Vconsole from 'vconsole'
 
 export default {
   components: {
     Loading,
-    ViewBox,
     XHeader,
     Masker,
     Tabbar,
-    TabbarItem
+    TabbarItem,
+    Vconsole
   },
   store: store,
   vuex: {
@@ -58,7 +52,7 @@ export default {
   computed: {
     leftOptions () {
       return {
-        showBack: this.route.name !== '关卡'
+        showBack: this.route.name !== '公司首页'
       }
     },
     headerTransition () {
@@ -124,7 +118,6 @@ export default {
 <style lang="less">
   @import 'styles/index.less';
   @import './styles/weui/base/reset';
-
   html,
   body {
     height: 100%;
@@ -136,18 +129,11 @@ export default {
     background-color: @theme-color-bg;
   }
   
-  .vux-demo-header-box {
-    z-index: 100;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-  }
-  
   .vux-title {
     vertical-align: middle;
     text-align: center;
     color: @theme-color-text;
+    font-family: @bizFont;
     margin: 20px 10px 20px 10px;
   }
   
@@ -155,27 +141,48 @@ export default {
     vertical-align: middle;
     text-align: center;
     color: @theme-color-text;
+    font-family: @bizFont;
+  }
+  
+  @font-face {
+    font-family: wending-pop4;
+    font-weight: normal;
+    src: url('http://tdkjgzh.applinzi.com/Public/font/wending-pop4.TTF')format('ttf');
+  }
+  
+  @font-face {
+    font-family: wending-pop-new;
+    font-weight: normal;
+    src: url('http://tdkjgzh.applinzi.com/Public/font/wending-pop-new.ttf')format('ttf');
+  }
+  
+  @font-face {
+    font-family: wending-pili;
+    font-weight: normal;
+    src: url('http://tdkjgzh.applinzi.com/Public/font/wending-pili.TTF')format('ttf');
   }
   /**
 * vue-router transition
 */
-.vux-view-left-transition,
-.vux-view-right-transition {
-  width: 100%;
-  animation-duration: 0.5s;
-  animation-fill-mode: both;
-  backface-visibility: hidden;
-}
-.vux-view-left-enter,
-.vux-view-left-leave,
-.vux-view-right-enter,
-.vux-view-right-leave {
-  will-change: transform;
-  height: 100%;
-  position: absolute;
-  left: 0;
-}
-/*.vux-pop-out-enter {
+  
+  .vux-view-left-transition,
+  .vux-view-right-transition {
+    width: 100%;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    backface-visibility: hidden;
+  }
+  
+  .vux-view-left-enter,
+  .vux-view-left-leave,
+  .vux-view-right-enter,
+  .vux-view-right-leave {
+    will-change: transform;
+    height: 100%;
+    position: absolute;
+    left: 0;
+  }
+  /*.vux-pop-out-enter {
   animation-name: slideInLeft;
 }
 .vux-pop-out-leave {
@@ -188,73 +195,87 @@ export default {
 .vux-pop-in-leave {
   animation-name: slideOutLeft;
 }*/
-.vux-view-left-enter {
-  animation-name: bounceInLeft;
-}
-.vux-view-left-leave {
-  animation-name: bounceOutRight;
-}
-.vux-view-right-enter {
-  perspective: 1000;
-  animation-name: bounceInRight;
-}
-.vux-view-right-leave {
-  animation-name: bounceOutLeft;
-}
-
-.vux-header-right-enter {
-  animation: bounceInRight .5s;
-}
-.vux-header-left-enter {
-  animation: bounceInLeft .5s;
-}
+  
+  .vux-view-left-enter {
+    animation-name: bounceInLeft;
+  }
+  
+  .vux-view-left-leave {
+    animation-name: bounceOutRight;
+  }
+  
+  .vux-view-right-enter {
+    perspective: 1000;
+    animation-name: bounceInRight;
+  }
+  
+  .vux-view-right-leave {
+    animation-name: bounceOutLeft;
+  }
+  
+  .vux-header-right-enter {
+    animation: bounceInRight .5s;
+  }
+  
+  .vux-header-left-enter {
+    animation: bounceInLeft .5s;
+  }
 </style>
 
 <style lang="less" scoped>
-  @import './styles/center';
   @import './styles/variable';
-  .m-img {
-    padding-bottom: 33%;
-    display: block;
-    position: relative;
-    max-width: 100%;
-    background-size: cover;
-    background-position: center center;
-  }
-  
-  .m-title {
-    color: @theme-color-text;
-    text-align: center;
-    text-shadow: 0 0 2px rgba(0, 0, 0, .5);
-    font-weight: 500;
-    font-size: 32px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .m-subtitle {
-    font-size: 16px;
-    padding-top: 4px;
-    border-top: 1px solid @theme-color-text;
-    display: inline-block;
-    margin-top: 5px;
-  }
-  
+  @import './styles/index.less';
+  @import './styles/weui/weui.less';
   .header_box {
     border-bottom: 8px solid @theme-color-fuzhu;
   }
   
-  .footer_box {
-    background: @theme-color-fuzhu;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    color: @theme-color-text;
+  .bd-box {
+    width: 100vmin;
+    height: 100%;
+    .header-box {
+      z-index: 100;
+      width: 100%;
+    }
+    .title-box {
+      width: 100vmin;
+      height: 50vmin;
+      background-color: #000000;
+      .logo {
+        background-image: url(http://tdkjgzh.applinzi.com/Public/et-info/img/etlogo150-150.png);
+        background-size: cover;
+        margin-left: 20vmin;
+        margin-top: 10vmin;
+        width: 30vmin;
+        height: 30vmin;
+        float: left;
+      }
+      .title {
+        color: @theme-color-text;
+        font-size: 15vmin;
+        font-weight: 1000;
+        margin-left: 5vmin;
+        line-height: 50vmin;
+        float: left;
+      }
+    }
+    .view-box {
+      width: 100vmin;
+    }
+    .footer_box {
+      background: #34495e;
+      position: absolute;
+      bottom: 0;
+      width: 100vmin;
+      height: 14vmin;
+      line-height: 5vmin;
+      font-size: 3vmin;
+      font-weight: 500;
+      text-align: center;
+      color: @theme-color-text;
+      .address {
+        margin-top: 2vmin
+      }
+    }
   }
 </style>

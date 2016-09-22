@@ -76,12 +76,6 @@ sync(store, router)
 
 router.map({
   '/': {
-    name: '关卡',
-    component: function (resolve) {
-      require(['./Home'], resolve)
-    }
-  },
-  '/subpages/index': {
     name: '公司首页',
     component: Index
   },
