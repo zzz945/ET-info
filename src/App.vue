@@ -226,16 +226,15 @@ export default {
   @import './styles/variable';
   @import './styles/index.less';
   @import './styles/weui/weui.less';
-  .header_box {
-    border-bottom: 8px solid @theme-color-fuzhu;
-  }
   
   .bd-box {
     width: 100vmin;
     height: 100%;
     .header-box {
+      position: absolute;
+      top: 0;
       z-index: 100;
-      width: 100%;
+      width: 100vmin;
     }
     .title-box {
       width: 100vmin;
@@ -245,7 +244,7 @@ export default {
         background-image: url(http://tdkjgzh.applinzi.com/Public/et-info/img/etlogo150-150.png);
         background-size: cover;
         margin-left: 20vmin;
-        margin-top: 10vmin;
+        margin-top: 12vmin;
         width: 30vmin;
         height: 30vmin;
         float: left;
@@ -255,6 +254,7 @@ export default {
         font-size: 15vmin;
         font-weight: 1000;
         margin-left: 5vmin;
+        margin-top: 5vmin;
         line-height: 50vmin;
         float: left;
       }

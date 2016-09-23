@@ -1,8 +1,31 @@
 <template>
-  <div class="font-color">
+  <!-- <div class="font-color">
     <grids class="grids_text">
       <grid v-for="item in list" :router-link="{path: item.url}" :image-url="item.image" :label="item.text"></grid>
     </grids>
+  </div>  -->
+  <div class="bd-box">
+    <div class="gsjj">
+      <p>公司简介</p>
+    </div>
+    <div class="qyln">
+      <p>企业理念</p>
+    </div>
+    <div class="zyyw">
+      <p>主营业务</p>
+    </div>
+    <div class="hyfa">
+      <p>行业方案</p>
+    </div>
+    <div class="gsdt">
+      <p>公司动态</p>
+    </div>
+    <div class="lxfs">
+      <p>联系方式</p>
+    </div>
+    <div class="zpxx">
+      <p>招聘信息</p>
+    </div>
   </div>
 </template>
 
@@ -67,7 +90,89 @@ export default {
 </script>
 <style lang="less" scoped>
   @import '../styles/variable';
+  @import '../styles/index';
   .grids_text {
     color: @theme-color-text;
+  }
+  
+  .bd-box {
+    width: 100vmin;
+    height: 100vmin;
+    position: absolute;
+    background-color: @theme-color-bg;
+    font-size: 5vmin;
+    font-weight: 1000;
+    color: #fff;
+    .gsjj {
+      position: absolute;
+      width: 30vmin;
+      height: 30vmin;
+      top: 0;
+      left: 35vmin;
+      background-image: url(http://tdkjgzh.applinzi.com/Public/et-info/img/btn-bg.png);
+      background-size: cover;
+      .vux-center;
+    }
+    .qyln {
+      position: absolute;
+      width: 30vmin;
+      height: 30vmin;
+      top: 15vmin;
+      left: 5vmin;
+      background-image: url(http://tdkjgzh.applinzi.com/Public/et-info/img/btn-bg.png);
+      background-size: cover;
+      .vux-center;
+    }
+    .zyyw {
+      position: absolute;
+      width: 30vmin;
+      height: 30vmin;
+      top: 15vmin;
+      left: 65vmin;
+      background-image: url(http://tdkjgzh.applinzi.com/Public/et-info/img/btn-bg.png);
+      background-size: cover;
+      .vux-center;
+    }
+    .hyfa {
+      position: absolute;
+      width: 30vmin;
+      height: 30vmin;
+      top: 35vmin;
+      left: 35vmin;
+      background-image: url(http://tdkjgzh.applinzi.com/Public/et-info/img/btn2-bg.png);
+      background-size: cover;
+      .vux-center;
+    }
+    .gsdt {
+      position: absolute;
+      width: 30vmin;
+      height: 30vmin;
+      top: 50vmin;
+      left: 5vmin;
+      background-image: url(http://tdkjgzh.applinzi.com/Public/et-info/img/btn-bg.png);
+      background-size: cover;
+      .vux-center;
+    }
+    .lxfs {
+      position: absolute;
+      width: 30vmin;
+      height: 30vmin;
+      top: 50vmin;
+      left: 65vmin;
+      background-image: url(http://tdkjgzh.applinzi.com/Public/et-info/img/btn-bg.png);
+      background-size: cover;
+      .vux-center;
+    }
+    .zpxx {
+      position: absolute;
+      width: 30vmin;
+      height: 30vmin;
+      top: 70vmin;
+      left: 35vmin;
+      background-image: url(http://tdkjgzh.applinzi.com/Public/et-info/img/btn-bg.png);
+      background-size: cover;
+      color: #fff;
+      .vux-center;
+    }
   }
 </style>
