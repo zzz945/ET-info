@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div style="margin: 10px;overflow: hidden;" v-for="item in list_on">
-      <masker style="border-radius: 2px;" :opacity="0.3" color="002269" @click="onClick(item)">
+  <div style="margin-bottom:9vmin;">
+    <div style="margin: 1vmin;overflow: hidden;" v-for="item in list_on">
+      <masker style="border-radius: 2px;" :opacity="0.8" color="3498db" @click="onClick(item)">
         <div class="m-img" :style="{backgroundImage: 'url(' + item.img + ')'}"></div>
         <div slot="content" class="m-title">
           {{item.title}}
@@ -10,7 +10,7 @@
         </div>
       </masker>
     </div>
-    <div style="margin: 10px;overflow: hidden;" v-for="item in list_off">
+    <div style="margin: 1vmin ;overflow: hidden;" v-for="item in list_off">
       <masker style="border-radius: 2px;" :opacity="0.8">
         <div class="m-img" :style="{backgroundImage: 'url(' + item.img + ')'}"></div>
         <div slot="content" class="m-title">
@@ -77,15 +77,13 @@ export default {
     background-size: cover;
     background-position: center center;
     cursor: pointer;
-    border-radius: 2px;
   }
   
   .m-title {
     color: #fff;
-    text-align: center;
-    text-shadow: 0 0 2px rgba(0, 0, 0, .5);
-    font-weight: 500;
-    font-size: 16px;
+    font-size: 5vmin;
+    font-family: @theme-font-text;
+    font-weight: bold;
     position: absolute;
     left: 0;
     right: 0;
@@ -96,10 +94,12 @@ export default {
   }
   
   .m-subtitle {
-    font-size: 12px;
-    padding-top: 4px;
-    border-top: 1px solid #f0f0f0;
+    font-size: 3vmin;
+    font-family: @theme-font-text;
+    font-weight: bold;
+    padding-top: 1vmin;
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 1vmin;
   }
+  
 </style>

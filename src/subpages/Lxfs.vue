@@ -1,29 +1,40 @@
 <template>
-  <div class="font-color">
-    <p style="margin: 20px; text-align: center;">
-      <span style="font-size: 16px; font-family: 楷体, 楷体_GB2312, SimKai;">业务部：王经理&nbsp;&nbsp;&nbsp;&nbsp;18642134123</span>
+  <div id="scroll-box" class="scroll-box">
+    <p style='text-indent: 2em; margin: 1em; line-height: 1.5em;'>
+      业务部：王经理&nbsp;&nbsp;18642134123
     </p>
-    <p style="margin: 20px; text-align: center;">
-      <span style="font-size: 16px; font-family: 楷体, 楷体_GB2312, SimKai;">技术部：张总监&nbsp;&nbsp;&nbsp;&nbsp;18504211831</span>
+    <p style='text-indent: 2em; margin: 1em; line-height: 1.5em;'>
+      技术部：张总监&nbsp;&nbsp;18504211831
     </p>
-    <p style="margin: 20px; text-align: center;">
-      <span style="font-size: 16px; font-family: 楷体, 楷体_GB2312, SimKai;">邮 &nbsp;箱： &nbsp; &nbsp; 642010820@qq.com</span>
+    <p style='text-indent: 2em; margin: 1em; line-height: 1.5em;'>
+      邮&nbsp;&nbsp;箱：642010820@qq.com
     </p>
+    <p style='text-indent: 2em; margin: 1em; line-height: 1.5em;'>
+      地&nbsp;&nbsp;址：辽宁省朝阳市朝阳县柳城街道龙山街四号
+    </p>
+    <p style='text-indent: 2em; margin: 1em; line-height: 1.5em;'>
+      邮&nbsp;&nbsp;编：122000
+    </p>
+
   </div>
 </template>
 
 <script>
-import { Divider } from '../components'
 
 export default {
   components: {
-    Divider
+  },
+  ready () {
+    let screenHeight = document.getElementById('app-bd-box').offsetHeight
+    let titleHeight = document.getElementById('app-title-box').offsetHeight
+    let footerHeight = document.getElementById('app-footer-box').offsetHeight
+    let viewHeight = screenHeight - titleHeight - footerHeight - footerHeight / 2
+    let view = document.getElementById('scroll-box')
+    view.style.height = viewHeight + 'px'
+    console.log('ready')
   }
 }
 </script>
 <style lang="less" scoped>
   @import '../styles/variable';
-  .font-color {
-    color: @theme-color-text;
-  }
 </style>

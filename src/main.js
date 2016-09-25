@@ -7,9 +7,7 @@ import Gsdt from './subpages/Gsdt'
 import Gsjj from './subpages/Gsjj'
 import Hyfa from './subpages/Hyfa'
 import Lxfs from './subpages/Lxfs'
-import Lyb from './subpages/Lyb'
 import Qyln from './subpages/Qyln'
-import Swhz from './subpages/Swhz'
 import Zpxx from './subpages/Zpxx'
 import Zyyw from './subpages/Zyyw'
 
@@ -95,17 +93,9 @@ router.map({
     name: '联系方式',
     component: Lxfs
   },
-  '/subpages/lyb': {
-    name: '留言板',
-    component: Lyb
-  },
   '/subpages/qyln': {
     name: '企业理念',
     component: Qyln
-  },
-  '/subpages/swhz': {
-    name: '商务合作',
-    component: Swhz
   },
   '/subpages/zpxx': {
     name: '招聘信息',

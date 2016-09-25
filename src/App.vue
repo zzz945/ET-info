@@ -1,24 +1,23 @@
 <template>
-  <div class="bd-box">
+  <div id="app-bd-box">
     <loading :show="isLoading" text="努力" position="absolute">加载中</loading>
-    <div class="header-box">
+    <div id="app-header-box">
       <x-header :left-options="leftOptions" :title="title" @on-click-title="scrollTop"></x-header>
     </div>
-    <div class="title-box">
-      <div class="logo"></div>
-      <div class="title">互联</div>
+    <div id="app-title-box">
+      <div id="app-logo"></div>
+      <div id="app-title">互联</div>
     </div>
-    <router-view class="view-box"></router-view>
-    <div class="footer_box">
-      <p class="address">地址：辽宁省朝阳市朝阳县柳城街道龙山街四号</p>
-      <p>统一社会信用代码91211321MAQFG6473</p>
+    <router-view></router-view>
+    <div id="app-footer-box">
+      <p>统一社会信用代码：91211321MAQFG6473</p>
     </div>
   </div>
 </template>
 
 <script>
 import store from './vuex/store'
-import { Loading, XHeader, Masker, Tabbar, TabbarItem } from './components'
+import { Loading, XHeader } from './components'
 import wx from 'we-jssdk'
 import Vconsole from 'vconsole'
 
@@ -26,9 +25,6 @@ export default {
   components: {
     Loading,
     XHeader,
-    Masker,
-    Tabbar,
-    TabbarItem,
     Vconsole
   },
   store: store,
@@ -121,7 +117,7 @@ export default {
   html,
   body {
     height: 100%;
-    width: 100%;
+    width: 100vmin;
     overflow-x: hidden;
   }
   
@@ -129,153 +125,79 @@ export default {
     background-color: @theme-color-bg;
   }
   
-  .vux-title {
-    vertical-align: middle;
-    text-align: center;
+  .scroll-box {
+    width: 92vmin;
+    overflow: auto;
+    border-radius: 5vmin;
+    margin: 0 4vmin;
     color: @theme-color-text;
-    font-family: @bizFont;
-    margin: 20px 10px 20px 10px;
+    background-color: @theme-color-fuzhu;
+    font-size: 5vmin;
+    font-family: @theme-font-text;
+    font-weight: bold;
   }
   
-  .vux-notice {
-    vertical-align: middle;
-    text-align: center;
-    color: @theme-color-text;
-    font-family: @bizFont;
-  }
-  
-  @font-face {
-    font-family: wending-pop4;
+  /* @font-face {
+    font-family: 'minijianluobo';
+    src: url('../../fonts/minijianluobo/minijianluobo.eot');
+    src: url('../../fonts/minijianluobo/minijianluobo.eot?#font-spider') format('embedded-opentype'), url('../../fonts/minijianluobo/minijianluobo.woff') format('woff'), url('../../fonts/minijianluobo/minijianluobo.ttf') format('truetype'), url('../../fonts/minijianluobo/minijianluobo.svg') format('svg');
     font-weight: normal;
-    src: url('http://tdkjgzh.applinzi.com/Public/font/wending-pop4.TTF')format('ttf');
-  }
+    font-style: normal;
+  }*/
   
-  @font-face {
-    font-family: wending-pop-new;
-    font-weight: normal;
-    src: url('http://tdkjgzh.applinzi.com/Public/font/wending-pop-new.ttf')format('ttf');
-  }
-  
-  @font-face {
-    font-family: wending-pili;
-    font-weight: normal;
-    src: url('http://tdkjgzh.applinzi.com/Public/font/wending-pili.TTF')format('ttf');
-  }
-  /**
-* vue-router transition
-*/
-  
-  .vux-view-left-transition,
-  .vux-view-right-transition {
-    width: 100%;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-    backface-visibility: hidden;
-  }
-  
-  .vux-view-left-enter,
-  .vux-view-left-leave,
-  .vux-view-right-enter,
-  .vux-view-right-leave {
-    will-change: transform;
-    height: 100%;
-    position: absolute;
-    left: 0;
-  }
-  /*.vux-pop-out-enter {
-  animation-name: slideInLeft;
-}
-.vux-pop-out-leave {
-  animation-name: slideOutRight;
-}
-.vux-pop-in-enter {
-  perspective: 1000;
-  animation-name: slideInRight;
-}
-.vux-pop-in-leave {
-  animation-name: slideOutLeft;
-}*/
-  
-  .vux-view-left-enter {
-    animation-name: bounceInLeft;
-  }
-  
-  .vux-view-left-leave {
-    animation-name: bounceOutRight;
-  }
-  
-  .vux-view-right-enter {
-    perspective: 1000;
-    animation-name: bounceInRight;
-  }
-  
-  .vux-view-right-leave {
-    animation-name: bounceOutLeft;
-  }
-  
-  .vux-header-right-enter {
-    animation: bounceInRight .5s;
-  }
-  
-  .vux-header-left-enter {
-    animation: bounceInLeft .5s;
-  }
 </style>
 
 <style lang="less" scoped>
   @import './styles/variable';
-  @import './styles/index.less';
-  @import './styles/weui/weui.less';
-  
-  .bd-box {
+  #app-bd-box {
     width: 100vmin;
     height: 100%;
-    .header-box {
+    #app-header-box {
       position: absolute;
       top: 0;
       z-index: 100;
       width: 100vmin;
+      height: 8vmin;
+      font-family: @theme-font-title;
     }
-    .title-box {
+    #app-title-box {
       width: 100vmin;
       height: 50vmin;
-      background-color: #000000;
-      .logo {
+      background-color: @theme-color-bg;
+      #app-logo {
         background-image: url(http://tdkjgzh.applinzi.com/Public/et-info/img/etlogo150-150.png);
         background-size: cover;
         margin-left: 20vmin;
-        margin-top: 12vmin;
-        width: 30vmin;
-        height: 30vmin;
+        margin-top: 17vmin;
+        /*(8+(42-25)/2)*/
+        width: 25vmin;
+        height: 25vmin;
         float: left;
       }
-      .title {
-        color: @theme-color-text;
-        font-size: 15vmin;
-        font-weight: 1000;
+      #app-title {
+        font-family: @theme-font-header;
+        color: @theme-color-dianjing;
+        font-size: 13vmin;
         margin-left: 5vmin;
-        margin-top: 5vmin;
-        line-height: 50vmin;
+        margin-top: 8vmin;
+        line-height: 42vmin;
         float: left;
       }
     }
-    .view-box {
+    #app-view-box {
       width: 100vmin;
     }
-    .footer_box {
-      background: #34495e;
+    #app-footer-box {
+      background: @x-header-background-color;
       position: absolute;
       bottom: 0;
       width: 100vmin;
-      height: 14vmin;
-      line-height: 5vmin;
-      font-size: 3vmin;
-      font-weight: 500;
+      height: 8vmin;
+      line-height: 8vmin;
+      font-size: 4vmin;
       text-align: center;
       color: @theme-color-text;
-      .address {
-        margin-top: 2vmin
-      }
+      font-family: @theme-font-title;
     }
   }
 </style>
