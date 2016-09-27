@@ -19,13 +19,12 @@
 import store from './vuex/store'
 import { Loading, XHeader } from './components'
 import wx from 'we-jssdk'
-import Vconsole from 'vconsole'
+// import Vconsole from 'vconsole'
 
 export default {
   components: {
     Loading,
-    XHeader,
-    Vconsole
+    XHeader
   },
   store: store,
   vuex: {

@@ -37,11 +37,11 @@ export default {
       list_on: [{
         title: '移动互联政务解决方案',
         img: 'http://tdkjgzh.applinzi.com/Public/et-info/img/gov.jpg',
-        url: 'http://mp.weixin.qq.com/s?__biz=MzIzODUzMzY0NA==&mid=100000002&idx=1&sn=c8935aec971926bed01ace578d1dd7a7&scene=0#wechat_redirect'
+        url: 'http://mp.weixin.qq.com/s?__biz=MzI4OTQ3NzExOQ==&mid=100000001&idx=1&sn=ad6577fabbf70388878f4d84b3fc0c2f&chksm=6c2fd9915b5850874337a50ec737ba4cdbe2b23d25c67b11544dd06de1da9b4961ae1684af6d&scene=0#wechat_redirect'
       }, {
         title: '移动互联餐厅解决方案',
         img: 'http://tdkjgzh.applinzi.com/Public/et-info/img/restaurant.jpg',
-        url: 'http://mp.weixin.qq.com/s?__biz=MzIzODUzMzY0NA==&mid=100000007&idx=1&sn=3e919f23174017b93a10ba284b6351a6&scene=0#wechat_redirect'
+        url: 'http://mp.weixin.qq.com/s?__biz=MzI4OTQ3NzExOQ==&mid=100000004&idx=1&sn=7349046984e9650eb63e1bf81049c05c&chksm=6c2fd9945b58508204a2b4e4cb8d77dc339f37c0ac632a417fda73290546430bb845e56de7a8&scene=0#wechat_redirect'
       }],
       list_off: [{
         title: '移动互联医院解决方案',
